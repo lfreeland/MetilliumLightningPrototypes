@@ -1,0 +1,21 @@
+<aura:component>
+    <aura:attribute name="title" type="String" />
+
+	<div class="slds-section slds-is-open"
+	     aura:id="collapsibleSectionContainer">
+        <h3 class="slds-section__title slds-theme_shade">
+            <!-- button state defaults to false so state 
+                 represents "is collapsed"
+             -->
+            <lightning:buttonStateful labelWhenOff="{! v.title }"
+                                      labelWhenOn="{! v.title }"
+                                      iconNameWhenOff="utility:chevrondown"
+                                      iconNameWhenOn="utility:chevronright"
+                                      onclick="{! c.handleSectionHeaderClick }"
+                                      class="slds-section__title-action" />
+        </h3>
+        <div class="slds-section__content" >
+            {! v.body }
+        </div>
+    </div>
+</aura:component>

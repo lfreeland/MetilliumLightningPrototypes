@@ -1,0 +1,5 @@
+<design:component >
+	<design:attribute name="lookupField" label="Lookup Field" description="API Name of the lookup field." />
+    <design:attribute name="submitButtonLabel" label="Submit Button Label" default="Submit" description="The label to show on the submit button." />
+    <design:attribute name="debugEnabled" label="Debug Enabled" datasource="Yes,No" default="No" description="When set to Yes, the diagnostic information is shown." />
+</design:component>

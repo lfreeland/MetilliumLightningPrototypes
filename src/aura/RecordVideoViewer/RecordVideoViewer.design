@@ -1,0 +1,5 @@
+<design:component >
+	<design:attribute name="videoField" label="Video Field" description="The api name of the field  from the given object that has the video's source URL." />
+	<design:attribute name="videoHeight" label="Video Height" description="The height for the video. Any CSS value is acceptable." default="400px" />
+	<design:attribute name="videoWidth" label="Video Width" description="The width for the video. Any CSS value is acceptable." default="100%" />
+</design:component>

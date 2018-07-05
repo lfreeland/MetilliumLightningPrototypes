@@ -1,0 +1,3 @@
+<design:component >
+	<design:attribute name="fieldSetName" label="Field Set Name" description="API Name of the field set to use." />
+</design:component>

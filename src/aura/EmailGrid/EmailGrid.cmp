@@ -1,0 +1,48 @@
+<aura:component controller="EmailGridController" implements="flexipage:availableForAllPageTypes">
+    <aura:attribute name="objectName" type="String" />
+    <aura:attribute name="fieldSet" type="String" />
+    <aura:attribute name="whereClause" type="String" />
+    <aura:attribute name="emailButtonLabel" type="String" />
+    <aura:attribute name="emailTemplate" type="String" />
+    <aura:attribute name="recipientUserId" type="String" />
+    
+    <aura:attribute name="records" type="EmailGridController.Record[]" />
+    <aura:attribute name="columnNames" type="String[]" />
+    <aura:attribute name="columnAPINames" type="String[]" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <lightning:button variant="brand" label="{! v.emailButtonLabel }" onclick="{! c.doEmailRecords }" />
+    
+    <table class="slds-table slds-table--bordered slds-table--cell-buffer">
+        <thead>
+            <tr>
+                	<th scope="col">
+                		<div class="slds-truncate">Select</div>
+                	</th>
+                
+                <aura:iteration items="{!v.columnNames}" var="column">
+                    <th scope="col">
+                        <div class="slds-truncate" title="{! column }">{! column }</div>
+                    </th>
+                </aura:iteration>
+        	</tr>
+        </thead>
+        <tbody>
+        	<aura:iteration items="{!v.records}" var="record">
+                <tr>
+                    	<td>
+                            <ui:inputCheckbox aura:id="selectCB" value="{!record.Selected}" />
+                    	</td>
+            		<aura:iteration items="{!record.Values}" var="fieldValue">
+                        <td>
+                        	<div class="slds-truncate">{! fieldValue }</div>
+                        </td>
+                    </aura:iteration>
+                
+                </tr>
+            
+            </aura:iteration>
+        </tbody>
+    </table>
+</aura:component>

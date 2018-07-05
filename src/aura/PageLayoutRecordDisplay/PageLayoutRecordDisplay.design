@@ -1,0 +1,4 @@
+<design:component >
+	<design:attribute name="PageLayoutName" label="Page Layout Name" description="The API name of the page layout." />
+	<design:attribute name="RecordId" label="Record Id" description="The id of the record." />
+</design:component>

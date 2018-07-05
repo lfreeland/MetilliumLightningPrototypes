@@ -1,0 +1,8 @@
+<design:component >
+    <design:attribute name="objectName" label="SObject" description="The API name of the SObject." />
+    <design:attribute name="fieldSet" label="Field Set" description="The API name of the field set to use on the given SObject." />
+    <design:attribute name="whereClause" label="Where Clause" description="The where clause to use in the dynamically built SOQL Query." />
+    <design:attribute name="emailTemplate" label="Email Template" description="The name of the email template to use" />
+    <design:attribute name="recipientUserId" label="Recipient User Id" description="The Id of the user that will receive the email" />
+    <design:attribute name="emailButtonLabel" label="Email Button Label" default="Email" description="The text to show on the button." />
+</design:component>

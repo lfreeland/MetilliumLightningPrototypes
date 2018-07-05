@@ -1,0 +1,18 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global" controller="RecordVideoViewerController">
+    <aura:attribute name="videoField" type="String" description="The api name of the field  from the given object that has the video's source URL." />
+    <aura:attribute name="videoHeight" type="String" description="Height for the video player." />
+    <aura:attribute name="videoWidth" type="String" description="Width for the video player." />
+
+    <aura:attribute name="videoSrcUrl" type="String" access="private" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+
+    <div class="slds-box slds-theme_default">
+        <iframe width="{! v.videoWidth }"
+                height="{! v.videoHeight }"
+                src="{! v.videoSrcUrl }"
+                frameborder="0"
+                allow="autoplay; encrypted-media"
+                allowfullscreen="allowfullscreen" />
+    </div>
+</aura:component>

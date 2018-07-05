@@ -1,0 +1,16 @@
+<aura:component controller="FieldSetRecordDisplayController" implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName">
+    <aura:attribute name="fieldSetName" type="String" description="The api name of the field set to use from the given object." />
+
+    <aura:attribute name="fields" type="Object[]" access="private" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler event="force:refreshView" action="{!c.init}" />
+
+    <lightning:recordViewForm recordId="{! v.recordId }" objectApiName="{! v.sObjectName }">
+        <div class="slds-box slds-theme_default">
+            <aura:iteration items="{! v.fields }" var="field">
+                <lightning:outputField fieldName="{! field.APIName }" />
+            </aura:iteration>
+        </div>
+    </lightning:recordViewForm>
+</aura:component>

@@ -1,0 +1,28 @@
+<aura:component controller="LookupDropdownController"
+                implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName">
+
+    <aura:attribute name="lookupField" type="String" />
+    <aura:attribute name="lookupFieldLabel" type="String" />
+    <aura:attribute name="submitButtonLabel" type="String" default="Submit" />
+    <aura:attribute name="selectableRecords" type="List" />
+    <aura:attribute name="debugEnabled" type="String" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.initLookupDropdown}" />
+    <aura:handler event="force:refreshView" action="{!c.initLookupDropdown}" />
+
+    <aura:If isTrue="{!v.debugEnabled=='Yes'}">
+        RecordId: {!v.recordId} <br />
+        sObjectName: {!v.sObjectName} <br />
+        lookupField: {!v.lookupField} <br />
+        lookupFieldLabel: {!v.lookupFieldLabel} <br />
+        submitButtonLabel: {!v.submitButtonLabel} <br />
+    </aura:If>
+    
+    <div class="slds-box slds-theme_default">
+	    <lightning:select name="lookupDropDownSelect" label="LookupField" aura:id="lookupDropDownSelect">
+	         <option value="0">Options are loading...</option>
+	    </lightning:select>
+	    
+	    <lightning:button variant="brand" label="{! v.submitButtonLabel }" onclick="{! c.saveLookupValue }" class="slds-m-top_medium" />
+    </div>
+</aura:component>

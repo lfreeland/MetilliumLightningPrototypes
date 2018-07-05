@@ -1,0 +1,4 @@
+<design:component >
+    <design:attribute name="fieldSetName" label="Field Set Name" description="API Name of the field set to use." />
+	<design:attribute name="sObjectName" label="Object Name" description="API Name of the Object to use. This only needs to be populated when not on a record detail page." />
+</design:component>
