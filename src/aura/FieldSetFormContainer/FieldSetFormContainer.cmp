@@ -1,5 +1,0 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
-	<aura:attribute name="record" type="Account" default="{}" />
-	
-	<c:FieldSetForm fieldSetName="FieldSetFormTest" saveAction="{! c.saveButtonClicked }" recordId="{!v.recordId}" sObjectName="{! v.sObjectName }"  />
-</aura:component>
