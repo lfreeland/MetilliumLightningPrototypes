@@ -8,7 +8,9 @@
     <aura:handler name="init" value="{!this}" action="{!c.init}" />
     <aura:handler event="force:refreshView" action="{!c.init}" />
 
-    {!v.body}
-    
-    <lightning:button label="Save" onclick="{! v.saveAction }" />
+    <div class="slds-card slds-p-around_medium">
+	    {!v.body}
+	    
+	    <lightning:button label="Save" onclick="{! v.saveAction }" variant="brand" />
+    </div>
 </aura:component>
