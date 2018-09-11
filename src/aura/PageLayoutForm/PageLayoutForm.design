@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="pageLayoutName" label="Page Layout Name" description="The API name of the page layout." />
+    <design:attribute name="sObjectName" label="SObject Name" description="The API name of the Object." />
+    <design:attribute name="recordId" label="Record Id" description="The id of the record." />
+    <design:attribute name="recordTypeId" label="Record Type Id" description="The id of the record type. Useful for picklists." />
+</design:component>

@@ -1,0 +1,33 @@
+<aura:component controller="PageLayoutForm" implements="flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName,flexipage:availableForAllPageTypes,lightning:isUrlAddressable">
+    <aura:attribute name="pageLayoutName" type="String" />
+    <aura:attribute name="recordTypeId" type="String" />
+    
+    <aura:attribute name="pageLayout" type="Object" access="private" />
+
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    <aura:handler event="force:refreshView" action="{!c.init}" />
+    
+    <lightning:recordEditForm objectApiName="{! v.sObjectName }"
+                              recordId="{! v.recordId }"
+                              recordTypeId="{! v.recordTypeId }"
+                              class="slds-card slds-p-around_medium"
+                              onsuccess="{! c.onsuccess }">
+        <lightning:messages />
+        
+        <aura:iteration items="{! v.pageLayout.Sections }" var="section">
+            <c:CollapsibleSection title="{! section.Label }">
+                <div class="slds-grid slds-gutters">
+                    <aura:iteration items="{! section.Columns }" var="column">
+                        <div class="slds-col">
+                            <aura:iteration items="{! column.Fields }" var="field">
+                                <lightning:inputField fieldName="{! field.APIName }" class="slds-p-top_small slds-m-top_medium" />
+                            </aura:iteration>
+                        </div>
+                    </aura:iteration>
+                </div>
+            </c:CollapsibleSection>
+        </aura:iteration>
+
+        <lightning:button class="slds-m-top_small" type="submit" label="Save" variant="brand" />
+    </lightning:recordEditForm>  
+</aura:component>
