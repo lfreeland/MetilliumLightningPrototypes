@@ -1,4 +1,5 @@
 <design:component >
 	<design:attribute name="PageLayoutName" label="Page Layout Name" description="The API name of the page layout." />
 	<design:attribute name="recordId" label="Record Id" description="The id of the record." />
+	<design:attribute name="sObjectName" label="Object Name" description="The Object's API name. This is required if not used on a record page." />
 </design:component>

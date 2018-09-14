@@ -1,4 +1,4 @@
-<aura:component controller="PageLayoutRecordDisplayController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId">
+<aura:component controller="PageLayoutRecordDisplayController" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,force:hasSObjectName">
     <aura:attribute name="PageLayoutName" type="String" />
 
 	<aura:attribute name="PageLayout" type="Object" access="private" />
@@ -7,7 +7,7 @@
 	
 	<div class="slds-box slds-theme_default">
 	<aura:if isTrue="{! v.recordId }">
-	<lightning:recordViewForm recordId="{! v.recordId }">
+	<lightning:recordViewForm recordId="{! v.recordId }" objectApiName="{! v.sObjectName }">
 		<aura:iteration items="{! v.PageLayout.Sections }" var="section">
 		    <c:CollapsibleSection title="{! section.Label }">
 		        <div class="slds-grid slds-gutters">
